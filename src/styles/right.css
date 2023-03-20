@@ -1,0 +1,124 @@
+.right {
+    margin-top: 1.4rem;
+}
+
+.right .top {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.right .top button {
+    display: none;
+}
+
+.right .theme-toggler{
+    background: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 4.2rem;
+    border-radius: var(--border-radius-1);
+    cursor: pointer;
+}
+
+.right .theme-toggler span {
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.right .theme-toggler span.active {
+    background: var(--color-primary);
+    color:white;
+    border-radius: var(--border-radius-1);
+}
+.right .top .profile {
+    display: flex;
+    gap: 1.2rem;
+    text-align: right;
+}
+
+/* =======UPDATES============= */
+
+.right .student-updates {
+    margin-top: 1rem;
+
+}
+.right .student-updates h2 {
+    margin-bottom: 0.8rem;
+}
+
+.right .student-updates .updates {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.right .student-updates .updates:hover {
+    box-shadow: none;
+}
+
+.right .student-updates .updates .update {
+    display:grid;
+    grid-template-columns: 2.6rem auto;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* ====================CLASS SECTIONS ==================== */
+
+.right .class-sections {
+    margin-top: 2rem;
+}
+.right .class-sections h2 {
+    margin-bottom: 0.8rem;
+}
+
+.right .class-sections .classroom {
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+    padding: 1.4rem var(--card-padding);
+    border-radius: var(--border-radius-3);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.right .class-sections .classroom:hover {
+    box-shadow: none;
+}
+
+.right .class-sections .classroom .right{
+    display: flex;
+    justify-content:space-between;
+    align-items: start;
+    margin: 0;
+    width: 100%;
+}
+.right .class-sections .classroom .icon {
+    padding: 0.6rem;
+    color: var(--color-white);
+    border-radius: 50%;
+    background:var(--color-primary);
+    display: flex;
+    align-items: center;
+}
+
+.right .class-sections .classroom.section1 .icon {
+    background: var(--color-danger);
+}
+
+.right .class-sections .classroom.addsection {
+    background:transparent;
+    border: 2px dashed var(--color-primary);
+    color: var(--color-primary);
+}

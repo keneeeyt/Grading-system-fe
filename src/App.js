@@ -1,17 +1,21 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { NavBar } from "./components/NavBar";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import NotFound from "./components/NotFound";
 import Admin from "./pages/Admin";
 import Card from "./pages/Card";
+import Delete from "./pages/Delete";
+import DeleteSection from "./pages/DeleteSection";
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import Student from "./pages/Student";
 import StudSection from "./pages/StudSection";
 import Teacher from "./pages/Teacher";
-import { UserProvider } from "./userContext";
+import { UserProvider } from "./UserContext";
 
 function App() {
   const [user, setUser] = useState(null)
+ 
 
   useEffect(() => {
     console.log(user)
@@ -23,20 +27,27 @@ function App() {
   return (
     <div className="App">
     <div className="main">
-    <UserProvider value={{user, setUser, unSetUser}}>
+   
     <Router>
-    <NavBar />
+    <UserProvider value={{user, setUser, unSetUser}}>
         <Routes>
+      
+           <Route path='/' element={<Home />}/>
+           <Route path='/login' element={<Login />}/>
+           <Route path='/admin' element={  <Admin /> }/>
+          <Route path="/*" element={<NotFound/>} />
           <Route path='/card/:id' element={<Card />} />
-          <Route path='/studsection/:_id' element={<StudSection />} />
+          <Route path='/studsection/:id' element={<StudSection />} />
           <Route path='/logout' element={<Logout />} />
-          <Route path='/' element={<Login />}/>
-          <Route path='/admin' element={<Admin />}/>
-          <Route path='/teacher' element={<Teacher />}/>
-          <Route path='/student' element={<Student />}/>
+          <Route path='/teacher' element={ <Teacher /> }/>
+          <Route path='/user' element={ <Student />}/>
+          <Route path='/delete/:id' element={<Delete />} />
+          <Route path='/delete-section/:id' element={<DeleteSection />} />
+       
         </Routes>
+        </UserProvider>
       </Router>
-      </UserProvider>
+     
     </div>
     </div>
   );
