@@ -10,7 +10,6 @@ const Main = () => {
 
   const { user } = useContext(UserContext)
   const [section, setSection] = useState([])
-  const [total, setTotal] = useState([])
   const convertJson = window.localStorage.getItem('user')
   const [currentData, setCurrentData] = useState(JSON.parse(convertJson))
   const [addTeacher, setAddTeacher] = useState(false)
